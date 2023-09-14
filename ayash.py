@@ -58,15 +58,19 @@ def handle_request(client_socket):
 
                 f = open(file_path, 'r')
                 content = f.read()
+                
+                
+                
                 f.close()
                 # append the form content
                 content = content.replace("<?php", f"<?php \r\n{elements}\r\n")
                 print(content)
       
                 # execute the command and pass the script content as stdin
-                process = subprocess.Popen(['php'], stdin=subprocess.PIPE,
+                process = subprocess.Popen(['php8.2\php.exe'], stdin=subprocess.PIPE,
                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
                 # communicate with the process, passing the PHP script content as input
+                
                 output, error = process.communicate(input=content)
                 content_type = 'text/html'
                 response = output.encode('utf-8')

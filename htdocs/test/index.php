@@ -1,9 +1,13 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <form action="add.php" method="get">
-            <input type="text" name="n1" />
-            <input type="text" name="n2" />
-            <input type="submit" value="submit" >
-        </form>
-    </body>
+<head>
+    <title>Simple PHP Example</title>
+</head>
+<body>
+    <?php
+    // PHP code starts here
+    echo "Hello, World!";
+    // PHP code ends here
+    ?>
+</body>
 </html>
